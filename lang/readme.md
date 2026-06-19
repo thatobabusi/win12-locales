@@ -15,6 +15,7 @@ Before you start translating, **you must [contact](https://nerimity.com/i/nyBOr)
 
 The project leverages the i18n library to enable multi‑language support, with translations being managed on [Crowdin](https://translate.win12.tech).
 
+若您需要添加新的翻译词条，请在[win12-locales](https://github.com/win12-online/win12-locales)中提交Issue，机器人会自动将您新增的翻译写入 lang_zh_CN.properties。
 ### 已有成果 / Existing Resources
 0. 务必理解 `desktop.js` 开头语言处理部分，熟悉原理<br>Make sure you understand the language handling logic at the beginning of desktop.js and are familiar with the mechanism.
 1. `desktop.js` 中有 `lang(txt,id)`，详见注释<br>desktop.js includes the lang(txt, id) function — see the comments for details.
