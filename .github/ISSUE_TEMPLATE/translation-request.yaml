@@ -16,11 +16,9 @@ body:
       options:
         - label: |
             我已确认这些 key 没有在 [其他 issues](https://github.com/win12-online/win12-locales/issues) 中提交过。
-            I am sure that these keys have NEVER been submitted in other issues.
           required: true
         - label: |
             我确认此翻译对应的主仓库改动已经或即将提交 PR。
-            I confirm that the corresponding main repository change has been or will be submitted as a PR.
           required: true
   - type: dropdown
     id: action
@@ -31,30 +29,43 @@ body:
         - 修改
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: key
     attributes:
       label: key
-      description: 翻译条目的 key，对应 win12 主仓库 HTML 元素中 `data-i18n` 属性的值。例如 `new-feature-title`
+      description: |
+        翻译条目的 key，对应 win12 主仓库 HTML 元素中 `data-i18n` 属性的值。
+        例如：
+        ```
+        new-feature-title
+        ```
+      render: text
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: value
     attributes:
       label: zh-CN 翻译值
-      description: 简体中文翻译内容。如需包含 HTML 标签，请确保标签完整保留。
+      description: |
+        简体中文翻译内容。如需包含 HTML 标签，请确保标签完整保留。
+        例如：
+        ```
+        新功能
+        ```
+      render: text
     validations:
       required: true
   - type: textarea
     id: more
     attributes:
-      label: 更多翻译（可选）
+      label: 更多翻译
       description: |
-        如需一次提交多个 key，请每行填写一个 `key=值`，例如：
+        可选。如需一次提交多个 key，请每行填写一个 `key=value`，例如：
         ```
         key1=值1
         key2=值2
         ```
+      render: text
   - type: input
     id: pr
     attributes:
