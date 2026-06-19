@@ -1,23 +1,20 @@
 # 翻译贡献指南
-开始翻译前，**务必[联系我们](https://teams.live.com/l/invite/FEA0yrNkE_bAn-ddwI)，并征得同意**，以了解是否还有其他人正在翻译，避免重复劳动和合并冲突。<br>
-Before you start translating, **you must [contact](https://teams.live.com/l/invite/FEA0yrNkE_bAn-ddwI) us and get approval** to check if others are already working on the same translation, avoid duplicate work and merge conflicts.
+开始翻译前，**务必[联系我们](https://nerimity.com/i/nyBOr)，并征得同意**，以了解是否还有其他人正在翻译，避免重复劳动。<br>
+Before you start translating, **you must [contact](https://nerimity.com/i/nyBOr) us and get approval** to check if others are already working on the same translation, avoid duplicate work and merge conflicts.
 
 ## 条件 / Requirements
 1. 有中文基础<br>Basic proficiency in Chinese
 2. 有一定的目标语言的基础 / 愿意将自己的 Windows 11 系统调成目标语言<br>Basic proficiency in the target language / willing to set your Windows 11 system to the target language
-3. 有代码基础<br>Basic coding knowledge
+
 
 ### 致繁體中文譯者
 鑑於「兩岸四地」在中文語言使用上存在顯著差異，語言變體繁多，需注意在翻譯時請以繁體中文（中國臺灣）（zh‑TW）為基準標準，另請特別留意兩岸間在詞彙、表達方式及用語習慣上的差異。
 
 ## 方法 / Method
-项目使用 i18n 库实现多语言，可上网查阅，或自行研究已有翻译的部分。
+项目使用 i18n 库实现多语言，而翻译在 [Crowdin](https://translate.win12.tech) 上进行。
 
-建议使用 [win12-i18n](https://github.com/win12-online/win12-i18n) 工具进行翻译，具体使用说明请参阅[此链接](https://github.com/win12-online/win12-i18n#%E4%BD%BF%E7%94%A8)。
+The project leverages the i18n library to enable multi‑language support, with translations being managed on [Crowdin](https://translate.win12.tech).
 
-The project uses an i18n library for multi-language support. You can refer to online resources or study existing translated sections. 
-
-It is recommended to use the [win12-i18n](https://github.com/win12-online/win12-i18n) tool for translation. For detailed usage instructions, please refer to [this link](https://github.com/win12-online/win12-i18n#%E4%BD%BF%E7%94%A8)。
 ### 已有成果 / Existing Resources
 0. 务必理解 `desktop.js` 开头语言处理部分，熟悉原理<br>Make sure you understand the language handling logic at the beginning of desktop.js and are familiar with the mechanism.
 1. `desktop.js` 中有 `lang(txt,id)`，详见注释<br>desktop.js includes the lang(txt, id) function — see the comments for details.
@@ -46,5 +43,5 @@ It is recommended to use the [win12-i18n](https://github.com/win12-online/win12-
 
 ## 酬劳 / Rewards
 有且仅有 Only these:
-1. Github 贡献点<br>GitHub contribution points
+1. Github和Crowdin 贡献点<br>GitHub and Crowdin contribution points
 2. 来自开发者的由衷感谢 >u-)o<br>Sincere gratitude from the developer >u-)o
