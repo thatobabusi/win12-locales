@@ -7,7 +7,7 @@ body:
     id: introduction
     attributes:
       value: |
-        请使用此模板提交新的简体中文翻译 key，或更新已有 key 的值。
+        请使用此模板提交新的简体中文翻译，或更新已有的翻译。
         Please use this template to submit new Simplified Chinese translation keys or update existing ones.
   - type: checkboxes
     id: prerequisites
@@ -15,7 +15,7 @@ body:
       label: 先决条件
       options:
         - label: |
-            我已确认这些 key 没有在 [其他 issues](https://github.com/win12-online/win12-locales/issues) 中提交过。
+            我已确认本Issue中提及的翻译内容没有在 [其他 issues](https://github.com/win12-online/win12-locales/issues) 中提交过。
           required: true
         - label: |
             我确认此翻译对应的主仓库改动已经或即将提交 PR。
