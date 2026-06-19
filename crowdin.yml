@@ -4,6 +4,13 @@
 "files": [
   {
     "source": "/lang/lang_zh_CN.properties",
-    "translation": "/lang/lang_%locale_with_underscore%.properties"
+    "translation": "/lang/lang_%locale_with_underscore%.properties",
+    "languages_mapping": {
+      "locale_with_underscore": {
+        "zh-CN": "zh_CN",
+        "zh-TW": "zh_TW",
+        "en-US": "en"
+      }
+    }
   }
 ]
