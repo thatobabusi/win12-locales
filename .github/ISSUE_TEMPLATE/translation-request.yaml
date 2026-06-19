@@ -53,3 +53,9 @@ body:
     id: note
     attributes:
       label: 备注
+  - type: markdown
+    id: status
+    attributes:
+      value: |
+        ---
+        [![Process Translation Request](https://github.com/win12-online/win12-locales/workflows/Process%20Translation%20Request/badge.svg)](https://github.com/win12-online/win12-locales/actions/workflows/translation-request.yml)

@@ -117,16 +117,22 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(i18n): update translations from issue #${ISSUE_NUMBER} (${{ steps.parse.outputs.count }} keys)"
           git push
 
-      - name: Comment on issue
+      - name: Comment on issue and close
         if: success()
         uses: actions/github-script@v7
         with:
           script: |
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
               body: `[成功] 已自动更新 zh-CN 文件（${{ steps.parse.outputs.count }} 个 key：${{ steps.parse.outputs.keys }}）。Crowdin 同步将在下次定时任务或手动触发时执行。`
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
             });
 
       - name: Comment on issue when failed
