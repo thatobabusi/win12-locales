@@ -33,30 +33,29 @@ jobs:
               return match ? match[1].trim() : '';
             }
 
-            const key = extract('key');
-            const value = extract('zh-CN 翻译值');
-            const more = extract('更多翻译');
+            const translations = extract('翻译列表');
 
-            if (!key || !value) {
-              core.setFailed('Missing key or zh-CN translation value');
+            if (!translations || translations === '_No response_') {
+              core.setFailed('Missing translation list');
               return;
             }
 
             const pairs = [];
-            pairs.push({ key, value });
-
-            if (more && more !== '_No response_') {
-              for (const line of more.split('\n')) {
-                const trimmed = line.trim();
-                if (!trimmed || trimmed.startsWith('```')) continue;
-                const idx = trimmed.indexOf('=');
-                if (idx > 0) {
-                  pairs.push({
-                    key: trimmed.substring(0, idx).trim(),
-                    value: trimmed.substring(idx + 1).trim()
-                  });
-                }
+            for (const line of translations.split('\n')) {
+              const trimmed = line.trim();
+              if (!trimmed || trimmed.startsWith('```')) continue;
+              const idx = trimmed.indexOf('=');
+              if (idx > 0) {
+                pairs.push({
+                  key: trimmed.substring(0, idx).trim(),
+                  value: trimmed.substring(idx + 1).trim()
+                });
               }
+            }
+
+            if (pairs.length === 0) {
+              core.setFailed('No valid key=value pairs found');
+              return;
             }
 
             // Remove duplicate keys, keep the last one
@@ -105,10 +104,8 @@ jobs:
 
             const keys = uniquePairs.map(p => p.key).join(', ');
             const count = uniquePairs.length;
-            const keyWord = count === 1 ? 'key' : 'keys';
             core.setOutput('keys', keys);
             core.setOutput('count', String(count));
-            core.setOutput('keyWord', keyWord);
 
       - name: Commit and push
         env:
@@ -117,7 +114,7 @@ jobs:
           git config user.name "Bedevere-win12-bot"
           git config user.email "bedevere-win12-bot@users.noreply.github.com"
           git add lang/lang_zh_CN.properties
-          git diff --cached --quiet || git commit -m "chore(i18n): update translations from issue #${ISSUE_NUMBER} (${{ steps.parse.outputs.count }} ${{ steps.parse.outputs.keyWord }})"
+          git diff --cached --quiet || git commit -m "chore(i18n): update translations from issue #${ISSUE_NUMBER} (${{ steps.parse.outputs.count }} keys)"
           git push
 
       - name: Comment on issue
@@ -141,5 +138,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `❌ 自动处理失败，请检查 key 和 zh-CN 翻译值是否填写正确。`
+              body: `❌ 自动处理失败，请检查“翻译列表”是否每行都按 \`key=value\` 格式填写。`
             });

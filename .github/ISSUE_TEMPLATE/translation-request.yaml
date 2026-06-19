@@ -30,42 +30,20 @@ body:
     validations:
       required: true
   - type: textarea
-    id: key
+    id: translations
     attributes:
-      label: key
+      label: 翻译列表
       description: |
-        翻译条目的 key，对应 win12 主仓库 HTML 元素中 `data-i18n` 属性的值。
+        每行填写一个 `key=value`。key 对应 win12 主仓库 HTML 元素中 `data-i18n` 属性的值。
         例如：
         ```
-        new-feature-title
+        new-feature-title=新功能
+        new-feature-desc=这是一个新功能
         ```
+        如需包含 HTML 标签，请确保标签完整保留。
       render: text
     validations:
       required: true
-  - type: textarea
-    id: value
-    attributes:
-      label: zh-CN 翻译值
-      description: |
-        简体中文翻译内容。如需包含 HTML 标签，请确保标签完整保留。
-        例如：
-        ```
-        新功能
-        ```
-      render: text
-    validations:
-      required: true
-  - type: textarea
-    id: more
-    attributes:
-      label: 更多翻译
-      description: |
-        可选。如需一次提交多个 key，请每行填写一个 `key=value`，例如：
-        ```
-        key1=值1
-        key2=值2
-        ```
-      render: text
   - type: input
     id: pr
     attributes:
