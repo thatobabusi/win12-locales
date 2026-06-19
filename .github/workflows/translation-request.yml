@@ -126,7 +126,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `✅ 已自动更新 zh-CN 文件（${{ steps.parse.outputs.count }} 个 key：${{ steps.parse.outputs.keys }}）。Crowdin 同步将在下次定时任务或手动触发时执行。`
+              body: `[成功] 已自动更新 zh-CN 文件（${{ steps.parse.outputs.count }} 个 key：${{ steps.parse.outputs.keys }}）。Crowdin 同步将在下次定时任务或手动触发时执行。`
             });
 
       - name: Comment on issue when failed
@@ -138,5 +138,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `❌ 自动处理失败，请检查“翻译列表”是否每行都按 \`key=value\` 格式填写。`
+              body: `[失败] 自动处理失败，请检查“翻译列表”是否每行都按 \`key=value\` 格式填写。`
             });
