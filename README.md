@@ -1,6 +1,6 @@
 # win12-locales
 
-这是 [win12](https://github.com/tjy-gitnub/win12) 项目的本地化翻译文件仓库。
+这是 [win12](https://github.com/win12-online/win12) 项目的本地化翻译文件仓库。
 
 本项目使用 [Crowdin](https://crowdin.com/project/win12) 进行翻译托管与协作。
 
@@ -29,7 +29,7 @@
 win12 主项目通过 Git submodule 引用本仓库：
 
 ```bash
-git submodule add https://github.com/tangyuan0821/win12-locales.git lang
+git submodule add https://github.com/win12-online/win12-locales.git lang
 ```
 
 ## 初始翻译导入
