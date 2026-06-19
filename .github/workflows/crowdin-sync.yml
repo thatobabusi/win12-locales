@@ -22,6 +22,7 @@ jobs:
           download_translations: true
           commit_message: 'chore: sync translations from Crowdin [skip ci]'
           create_pull_request: false
+          localization_branch_name: main
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
