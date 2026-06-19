@@ -1,56 +1,56 @@
 name: Translation request / 翻译提交
- description: Submit a new or updated zh-CN translation key / 提交新增或更新的简体中文翻译
- title: '[Translation] '
- labels: ['translation-request']
- body:
-   - type: markdown
-     id: introduction
-     attributes:
-       value: |
-         请使用此模板提交新的简体中文翻译 key，或更新已有 key 的值。
-         Please use this template to submit a new Simplified Chinese translation key or update an existing one.
-   - type: checkboxes
-     id: prerequisites
-     attributes:
-       label: 先决条件 (Prerequisites)
-       options:
-         - label: |
-             我已确认这个 key 没有在 [其他 issues](https://github.com/win12-online/win12-locales/issues) 中提交过。
-             I am sure that this key has NEVER been submitted in other issues.
-           required: true
-         - label: |
-             我确认此翻译对应的主仓库改动已经或即将提交 PR。
-             I confirm that the corresponding main repository change has been or will be submitted as a PR.
-           required: true
-   - type: dropdown
-     id: action
-     attributes:
-       label: 操作类型 (Action type)
-       options:
-         - 新增 (Add new key)
-         - 修改 (Update existing key)
-     validations:
-       required: true
-   - type: input
-     id: key
-     attributes:
-       label: key
-       description: 翻译条目的 key，例如 `new-feature-title`
-     validations:
-       required: true
-   - type: input
-     id: value
-     attributes:
-       label: zh-CN 翻译值 (Translation value)
-       description: 简体中文翻译内容。如需包含 HTML 标签，请确保标签完整保留。
-     validations:
-       required: true
-   - type: input
-     id: pr
-     attributes:
-       label: 关联主仓库 PR (Related main repo PR)
-       description: 可选。例如 https://github.com/win12-online/win12/pull/123
-   - type: textarea
-     id: note
-     attributes:
-       label: 备注 (Notes)
+description: Submit a new or updated zh-CN translation key / 提交新增或更新的简体中文翻译
+title: '[Translation] '
+labels: ['translation-request']
+body:
+  - type: markdown
+    id: introduction
+    attributes:
+      value: |
+        请使用此模板提交新的简体中文翻译 key，或更新已有 key 的值。
+        Please use this template to submit a new Simplified Chinese translation key or update an existing one.
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: 先决条件
+      options:
+        - label: |
+            我已确认这个 key 没有在 [其他 issues](https://github.com/win12-online/win12-locales/issues) 中提交过。
+            I am sure that this key has NEVER been submitted in other issues.
+          required: true
+        - label: |
+            我确认此翻译对应的主仓库改动已经或即将提交 PR。
+            I confirm that the corresponding main repository change has been or will be submitted as a PR.
+          required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: 操作类型
+      options:
+        - 新增
+        - 修改
+    validations:
+      required: true
+  - type: input
+    id: key
+    attributes:
+      label: key
+      description: 翻译条目的 key，例如 `new-feature-title`
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: zh-CN 翻译值
+      description: 简体中文翻译内容。如需包含 HTML 标签，请确保标签完整保留。
+    validations:
+      required: true
+  - type: input
+    id: pr
+    attributes:
+      label: 关联主仓库 PR
+      description: 可选。例如 https://github.com/win12-online/win12/pull/123
+  - type: textarea
+    id: note
+    attributes:
+      label: 备注

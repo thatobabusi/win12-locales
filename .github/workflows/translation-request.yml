@@ -94,5 +94,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `✅ 已自动更新 \_zh-CN\_ 文件（${{ steps.parse.outputs.action }} key: \`${{ steps.parse.outputs.key }}\`）。Crowdin 同步将在下次定时任务或手动触发时执行。`
+              body: `已自动更新 \_zh-CN\_ 文件（${{ steps.parse.outputs.action }} key: \`${{ steps.parse.outputs.key }}\`）。Crowdin 同步将在下次定时任务或手动触发时执行。`
             });
