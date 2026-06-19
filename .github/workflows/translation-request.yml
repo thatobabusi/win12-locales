@@ -2,7 +2,7 @@ name: Process Translation Request
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened]
 
 jobs:
   process:
