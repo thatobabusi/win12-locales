@@ -3,9 +3,9 @@ api_token_env: CROWDIN_PERSONAL_TOKEN
 base_path: "."
 files:
   - source: /lang/lang_zh_CN.properties
-    translation: /lang/lang_%locale%.properties
+    translation: /lang/lang_%language%.properties
     languages_mapping:
-      locale:
+      language:
         zh-CN: zh_CN
         zh-TW: zh_TW
-        en-US: en
+        en: en
